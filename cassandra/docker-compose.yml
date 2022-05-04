@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  cassandra:
+    image: cassandra
+    ports:
+      - "9042:9042"
+    volumes:
+      - $PWD/cassandra/data:/var/lib/cassandra
+    environment:
+      - CASSANDRA_CLUSTER_NAME=cluster-0
+    container_name: cassandra-0
