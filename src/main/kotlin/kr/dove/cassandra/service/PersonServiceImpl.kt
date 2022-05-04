@@ -35,7 +35,7 @@ class PersonServiceImpl(
 
     //  marking tombstone
     //  will be deleted when compaction in SSTable occurs or the GC works.
-    //  Cassandra internally stores data sequentially.
+    //  Cassandra internally stores data sequentially in MemTable.
     //  Therefore, tombstone marked data must also be read and passed.
     //  It may occur performance degradation, so this should be considered.
     override fun delete(id: UUID): Mono<Boolean> {
